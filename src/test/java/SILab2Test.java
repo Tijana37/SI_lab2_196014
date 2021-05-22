@@ -10,14 +10,10 @@ public class SILab2Test {
     private List<Time> list = new ArrayList<>();
     private List<Integer> result = new ArrayList<>();
 
-    @Test
-    public void normalFlow() {
-        list.add(new Time(2,3,5));
-        result.add(7385);
-        assertEquals(result, lab.function(list));
-    }
+
     @Test
     public void MultipleCondition() {
+        List<Time> empty_list = new ArrayList<>();
         List<Time> list1 = new ArrayList<>();
         list1.add(new Time(-1,2,2));
         List<Time> list2 = new ArrayList<>();
@@ -34,6 +30,7 @@ public class SILab2Test {
         list7.add(new Time(23,2,-2));
 
         RuntimeException exception = null;
+        assertTrue(lab.function(list).isEmpty());
         result.add(10922);
         assertEquals(result, lab.function(list3));
         try{
